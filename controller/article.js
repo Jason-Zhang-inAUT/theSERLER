@@ -1,8 +1,11 @@
-var articleModel = require('./../model/article.js');
+var articleModel = require('../model/article.js');
 // 获取职员列表
 exports.articleList = function (req, res) {
   const yearto = req.body.yearto;
   const yearfrom = req.body.yearfrom;
+    var prama = {
+      year:{$gte:2018,$lte:2019}
+    };
     // var query = articleModel.find({});
     if(yearto *1 === 0 && yearfrom* 1 === 0){
       articleModel
@@ -17,8 +20,8 @@ exports.articleList = function (req, res) {
       });
     }else{
       articleModel
-      .find({})
-      .where('year').gte(yearfrom).lte(yearto)
+      .find(prama)
+      // .where('year').gte(yearfrom).lte(yearto)
       // .populate('Department','department_name')
       .exec(function (err, staffs) {
         if(err){
