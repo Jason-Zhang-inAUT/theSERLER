@@ -5,7 +5,6 @@ class Menu extends Component {
     render(){
         return <ul className="g-menu">
             <li className="nav"><Link to={`/search`} activeClassName='g-navActive' className='link'>Search</Link></li>
-            <li className="nav"><Link to={`/articlereview`} activeClassName='g-navActive' className='link'>article review</Link></li>
         </ul>
     }
 }
