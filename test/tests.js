@@ -35,9 +35,11 @@ it('article can be saved', function(done){
 			const article = new articleModel({       
 		        article_name:'test1',
 				author_name:'2',
-				year:[2000,2019],
+				year:2019,
 				field_id:1,
 				se_method:'TDD',
+                se_methodology:'testdata',
+                review: '1',
 				research_question:'3',
 				research_result:'4'  
 			});       
@@ -53,11 +55,13 @@ it('article can be updated', function(done){
 	articleModel.findOneAndUpdate({article_name:'test1'},{
 			article_name:'testnew1',
 			author_name:'2',
-			year:[2000,2019],
-			field_id:1,
-			se_method:'TDD',
-			research_question:'3',
-			research_result:'4' 
+            year:2019,
+            field_id:1,
+            se_method:'TDD',
+            se_methodology:'testdata',
+            review: '1',
+            research_question:'3',
+            research_result:'4' 
 		},{new:false},function (err, result) {
 			 err.should.equal('');
 		})
